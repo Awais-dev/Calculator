@@ -13,7 +13,7 @@ namespace Calculatorproject
             while (!firstNumberValid)
             {
                 Console.WriteLine("Enter First Number\n");
-                string input = Console.ReadLine();
+                var input = Console.ReadLine();
                 if (decimal.TryParse(input, out firstnum))
                 {
                     firstNumberValid = true;

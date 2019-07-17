@@ -1,49 +1,27 @@
-﻿using System;
+﻿using Calculatorproject.Operators;
+using System;
 
 namespace Calculatorproject
-{
+{       
     public class Program
     {
-
-        public static void Main(string[] args)
+        private static void Main()
         {
-            Console.WriteLine("\t\t\tCalculator Project\r");
+            //var stepbystep = new StepByStep();s
+            //stepbystep.Stepcall();
 
-            var firstNumber = new FirstNumber();
-            var firstnum = firstNumber.Firstnumbercall();
+            //var oneline = new OneLine();
+            //oneline.Equation();
 
-            var operatorsymbol = new Operator();
-            var ops = operatorsymbol.OperatorCall();
+            var input = Console.ReadLine();
 
-            var secondNumber = new SecondNumber();
-            var secondnum = secondNumber.Secondnumbercall();
-
-            decimal answer;
-
-            if (ops == "+")
+            if(input.Contains("+"))
             {
-                answer = firstnum + secondnum;
-
-                Console.Write(answer);
+                var addition = new Addition();
+                addition.Test(input);
             }
-            if (ops == "-")
-            {
-                answer = firstnum - secondnum;
 
-                Console.Write(answer);
-            }
-            if (ops == "*")
-            {
-                answer = firstnum * secondnum;
-
-                Console.Write(answer);
-            }
-            if (ops == "/")
-            {
-                answer = firstnum / secondnum;
-
-                Console.Write(answer);
-            }      
+            Console.ReadKey();
         }
     }
 }
